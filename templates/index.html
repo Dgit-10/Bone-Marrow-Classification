@@ -1,0 +1,27 @@
+<html>
+<head><title>Bone Marrow Cell Classification</title>
+<style>
+.head
+{
+	font-weight:bold;
+	font-size:3em;
+	text-decoration:bold;
+	text-align:center;
+}
+form
+{
+	margin-top:70px;
+	text-align:center;
+}
+</style></head>
+<body>
+	<div class="head">Bone Marrow Cell Classification</div>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" id="file" required>
+		<input type="submit">
+	</form>
+	{% if(data) %}
+		<p style="font-size:1.5em;color:red;margin-top:50px;">The prediction of the model is: <span style="color:blue">{{data["Prediction_Class"]}}</span> 
+		and Time taken to run <span style="color:blue">{{data["Time_Required"]}} seconds</span></p>
+	{%endif%}
+</body></html>
